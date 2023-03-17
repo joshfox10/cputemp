@@ -25,7 +25,7 @@ import dbus
 
 from advertisement import Advertisement
 from service import Application, Service, Characteristic, Descriptor
-from gpiozero import CPUTemperature
+#from gpiozero import CPUTemperature
 
 GATT_CHRC_IFACE = "org.bluez.GattCharacteristic1"
 NOTIFY_TIMEOUT = 5000
@@ -67,8 +67,9 @@ class TempCharacteristic(Characteristic):
         value = []
         unit = "C"
 
-        cpu = CPUTemperature()
-        temp = cpu.temperature
+        #cpu = CPUTemperature()
+        #temp = cpu.temperature
+        temp = 25
         if self.service.is_farenheit():
             temp = (temp * 1.8) + 32
             unit = "F"
